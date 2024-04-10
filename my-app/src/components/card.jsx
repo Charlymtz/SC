@@ -2,6 +2,7 @@ import nikeairforce1 from '../img/nikeairforce1.png'
 import jordanretro from '../img/jordanretro.png'
 import adidasforum from '../img/adidasforum.png'
 
+
 function Card() {
     return (
       <div className="flex justify-center space-x-4 bg-white">
