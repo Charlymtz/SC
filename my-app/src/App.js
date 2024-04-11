@@ -1,5 +1,6 @@
 import Header from './components/header';
-import SectionOne from './components/sectionone'
+import SectionOne from './components/sectionone';
+import SectionTwo from './components/sectiontwo';
 import Card from './components/card';
 import './App.css';
 
@@ -8,6 +9,7 @@ function App() {
    <>
    <Header/>
    <Card/>
+   <SectionTwo/>
    <SectionOne/>
    </>
   );
