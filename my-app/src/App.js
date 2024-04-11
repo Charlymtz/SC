@@ -2,6 +2,7 @@ import Header from './components/header';
 import SectionOne from './components/sectionone';
 import SectionTwo from './components/sectiontwo';
 import Card from './components/card';
+import Footer from './components/footer';
 import './App.css';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
    <Card/>
    <SectionTwo/>
    <SectionOne/>
+   <Footer/>
    </>
   );
 }

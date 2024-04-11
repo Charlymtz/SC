@@ -21,10 +21,10 @@ function Card() {
               <div
                 className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
               >
-                <p className="text-sm text-white">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis perferendis hic asperiores
-                  quibusdam quidem voluptates doloremque reiciendis nostrum harum. Repudiandae?
-                </p>
+               <p className="text-sm text-white">
+                Elevate your style with the iconic Air Jordan 11 Retro. Experience the perfect blend of heritage and innovation, designed to make a statement both on and off the court.
+              </p>
+
               </div>
             </div>
           </div>
@@ -47,9 +47,9 @@ function Card() {
                 className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
               >
                 <p className="text-sm text-white">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis perferendis hic asperiores
-                  quibusdam quidem voluptates doloremque reiciendis nostrum harum. Repudiandae?
+                Step into legendary status with the timeless Nike Air Force 1. Embrace the classic design and unmatched comfort, a symbol of self-expression and individuality.
                 </p>
+
               </div>
             </div>
           </div>
@@ -70,8 +70,7 @@ function Card() {
                 className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
               >
                 <p className="text-sm text-white">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis perferendis hic asperiores
-                  quibusdam quidem voluptates doloremque reiciendis nostrum harum. Repudiandae?
+                Redefine your street style with the Adidas Forum Low. Experience unparalleled comfort and versatility, crafted for those who dare to challenge the norm.
                 </p>
               </div>
             </div>
