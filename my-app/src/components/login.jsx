@@ -99,7 +99,9 @@ function Login(){
           type="submit"
           className="inline-block rounded-lg bg-teal-600 px-5 py-3 text-sm font-medium text-white"
         >
-          Sign in
+          <a className="underline" href="#">
+          <NavLink className='nav-link' to='/MainPage'>Sign in</NavLink>
+            </a>
         </button>
       </div>
     </form>

@@ -1,0 +1,100 @@
+[
+    {
+      "id": 1,
+      "name": "Nike Air Max 270",
+      "price": 147,
+      "image": "/img/NikeAirMax270.png"
+    },
+    {
+      "id": 2,
+      "name": "Nike Air Max 270",
+      "price": 162,
+      "image": "/img/Jordan4retro.png"
+    },
+    {
+        "id": 3,
+        "name": "Adidas Ultraboost",
+        "price": 110,
+        "image": "/img/AdidasBost.png"
+      },
+      {
+        "id": 4,
+        "name": "Nike React Infinity Run",
+        "price": 50,
+        "image": "/img/NikeReactInfinityRun.png"
+      },
+      {
+        "id": 5,
+        "name": "New Balance Fresh Foam 1080v11",
+        "price": 180,
+        "image": "/img/NewBalanceFreshFoam1080v11.png"
+      },
+      {
+        "id": 6,
+        "name": "Brooks Ghost 14",
+        "price": 170,
+        "image": "/img/BrooksGhost14.png"
+      },
+      {
+        "id": 7,
+        "name": "Under Armour HOVR Infinite 2",
+        "price": 86,
+        "image": "/img/UnderArmourHOVRInfinite2.png"
+      },
+         {
+          "id": 8,
+          "name": "Nike Air Force 1",
+          "price": 95,
+          "image": "/img/NikeAirForce1.png"
+        },
+        {
+          "id": 9,
+          "name": "Adidas Stan Smith",
+          "price": 91,
+          "image": "/img/AdidasStanSmith.png"
+        },
+        {
+          "id": 10,
+          "name": "New Balance 574",
+          "price": 78,
+          "image": "/img/NewBalance574.png"
+        },
+        {
+          "id": 11,
+          "name": "Converse Chuck Taylor All Star",
+          "price": 99,
+          "image": "/img/ConverseChuckTaylorAllStar.png"
+        },
+        {
+          "id": 12,
+          "name": "Vans Old Skool",
+          "price": 43,
+          "image": "/img/VansOldSkool.png"
+        },
+        {
+          "id": 13,
+          "name": "Puma Suede Classic",
+          "price": 94,
+          "image": "/img/PumaSuedeClassic.png"
+        },
+        {
+          "id": 14,
+          "name": "Reebok Classic Leather",
+          "price": 117,
+          "image": "/img/ReebokClassicLeather.png"
+        },
+        {
+          "id": 15,
+          "name": "Under Armour Curry 8",
+          "price": 108,
+          "image": "/img/UnderArmourCurry8.png"
+        },
+        {
+          "id": 16,
+          "name": "Balenciaga Speed Trainer",
+          "price": 382,
+          "image": "/img/Balenciaga.png"
+        }
+      
+  ]
+  
