@@ -34,7 +34,9 @@ function Header() {
                   <a className="text-gray-500 transition hover:text-gray-500/75" href="#"> Projects </a>
                 </li>
                 <li>
-                  <a className="text-gray-500 transition hover:text-gray-500/75" href="#"> Blog </a>
+                  <a className="text-gray-500 transition hover:text-gray-500/75" href="#"> 
+                  <NavLink className='nav-link' to='/Maps'>Api Maps</NavLink> 
+                  </a>
                 </li>
               </ul>
             </nav>

@@ -3,6 +3,7 @@ import LandPage from './components/landpage';
 import Register from './components/register';
 import Login from './components/login';
 import MainPage from './components/mainpage';
+import Maps from './components/maps';
 import './App.css';
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
       <Route path='/Register' element={<Register/>}/>
       <Route path='/Login' element={<Login/>}/>
       <Route path='/MainPage' element={<MainPage/>}/>
+      <Route path='/Maps' element={<Maps/>}/>
+
       
 
     </Routes>
