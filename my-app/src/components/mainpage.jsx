@@ -9,7 +9,6 @@ export default function MainPage(){
         <div className="mx-auto max-screen px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             <div className="flex-1 md:flex md:items-center md:gap-12">
-              <a className="block text-teal-600" href="#">
                 <span className="sr-only">Home</span>
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="80" height="80" viewBox="0 0 918 968" preserveAspectRatio="xMidYMid meet">
                 <g transform="translate(0.000000,968.000000) scale(0.100000,-0.100000)" fill="#0F4C7F" stroke="none">
@@ -17,7 +16,6 @@ export default function MainPage(){
                 <path d="M3729 5180 c-9 -5 -22 -23 -29 -40 -15 -37 0 -81 33 -98 14 -7 101 -13 227 -14 245 -4 223 6 350 -160 47 -62 104 -127 127 -144 52 -40 117 -55 178 -42 67 14 119 60 215 186 127 166 105 156 350 160 126 1 213 7 227 14 12 6 27 24 34 40 16 38 -9 94 -44 103 -13 4 -125 5 -248 3 -222 -3 -224 -3 -269 -30 -55 -32 -114 -94 -195 -205 -33 -45 -72 -89 -87 -98 -26 -15 -30 -15 -55 0 -16 9 -55 53 -88 98 -81 111 -140 173 -195 205 -45 27 -46 27 -280 30 -141 1 -241 -2 -251 -8z"/>
                 </g>
                </svg>
-              </a>
             </div>
             <div className="md:flex md:items-center md:gap-12">
               <div className="flex items-center gap-4">
@@ -44,6 +42,7 @@ export default function MainPage(){
                     </NavLink> 
                     </a>
                   </div>
+                  
                 </div>
                 <div className="block md:hidden">
                   <button className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
