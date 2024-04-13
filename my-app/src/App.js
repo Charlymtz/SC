@@ -4,6 +4,8 @@ import Register from './components/register';
 import Login from './components/login';
 import MainPage from './components/mainpage';
 import Maps from './components/maps';
+import Cart from './components/cart';
+import Profile from './components/profile';
 import './App.css';
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
       <Route path='/Login' element={<Login/>}/>
       <Route path='/MainPage' element={<MainPage/>}/>
       <Route path='/Maps' element={<Maps/>}/>
+      <Route path='/Profile' element={<Profile/>}/>
+      <Route path='/Cart' element={<Cart/>}/>
 
       
 

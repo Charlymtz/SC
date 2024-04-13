@@ -1,83 +1,86 @@
-import { NavLink } from "react-router-dom"
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import ShoeCard from './shoecard';
-import products from '../products.json'
+import products from '../products.json';
 
-export default function MainPage(){
-    return(
-<div>
-    <header className="bg-white">
-        <div className="mx-auto max-screen px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between">
-            <div className="flex-1 md:flex md:items-center md:gap-12">
-                <span className="sr-only">Home</span>
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="80" height="80" viewBox="0 0 918 968" preserveAspectRatio="xMidYMid meet">
+export default function MainPage() {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const closeDropdown = () => {
+    setIsDropdownOpen(false);
+  };
+
+  return (
+    <div>
+      <div>
+        <header className="bg-white">
+          <div className="mx-auto max-screen px-4 sm:px-6 lg:px-8">
+            <div className="flex h-16 items-center justify-between">
+              {/* Logo */}
+              <div className="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="80" height="80" viewBox="0 0 918 968" preserveAspectRatio="xMidYMid meet">
                 <g transform="translate(0.000000,968.000000) scale(0.100000,-0.100000)" fill="#0F4C7F" stroke="none">
                 <path d="M3288 6948 c-9 -7 -34 -37 -56 -66 -74 -100 -157 -159 -477 -345 -276 -160 -384 -236 -505 -357 -118 -118 -167 -193 -206 -314 -127 -401 118 -784 671 -1047 145 -69 278 -119 433 -163 l117 -33 -5 -49 c-3 -27 -5 -98 -5 -159 0 -129 20 -198 90 -306 77 -120 187 -217 452 -398 l101 -70 -15 -52 c-23 -78 -14 -200 20 -266 34 -65 107 -137 170 -166 38 -18 47 -26 43 -42 -36 -152 6 -274 114 -331 62 -33 130 -31 246 6 l94 30 94 -30 c116 -37 184 -39 246 -6 108 57 150 179 114 331 -4 16 5 24 43 42 63 29 136 101 170 166 34 66 43 188 20 266 l-15 52 101 70 c265 181 375 278 452 398 70 108 90 177 90 306 0 61 -2 132 -5 159 l-5 49 117 33 c155 44 288 94 433 163 553 263 798 646 671 1047 -39 121 -88 196 -206 314 -121 121 -229 197 -505 357 -320 186 -403 245 -477 345 -50 67 -64 78 -103 78 -77 0 -97 -95 -50 -235 36 -109 93 -196 242 -372 205 -242 253 -324 255 -434 2 -107 -62 -189 -201 -259 -80 -40 -235 -87 -333 -101 -83 -12 -86 -12 -124 12 -69 43 -116 59 -291 104 -95 24 -210 60 -255 80 -46 21 -121 54 -168 75 -212 94 -408 94 -620 0 -47 -21 -122 -54 -168 -75 -45 -20 -160 -56 -255 -80 -175 -45 -222 -61 -291 -104 -38 -24 -41 -24 -124 -12 -98 14 -253 61 -333 101 -139 70 -203 152 -201 259 2 110 50 192 255 434 73 87 152 189 176 228 86 144 118 310 68 357 -26 24 -74 29 -99 10z m-229 -437 c-8 -11 -60 -73 -115 -139 -172 -202 -219 -302 -219 -462 0 -88 3 -101 33 -162 78 -159 287 -283 577 -343 44 -9 81 -18 84 -20 2 -3 -19 -109 -47 -237 -28 -128 -56 -261 -63 -296 l-12 -63 -31 7 c-213 45 -524 178 -707 301 -257 171 -379 354 -379 566 0 144 58 271 181 397 91 94 173 152 434 306 127 75 239 143 250 150 27 18 30 17 14 -5z m3316 -162 c232 -138 315 -198 404 -289 123 -126 181 -253 181 -397 0 -212 -122 -395 -379 -566 -183 -123 -494 -256 -707 -301 l-31 -7 -12 63 c-7 35 -35 168 -63 296 -28 128 -49 234 -47 237 3 2 40 11 84 20 290 60 499 184 577 343 30 61 33 74 33 162 0 160 -47 260 -219 462 -55 66 -107 129 -115 140 -16 22 -23 26 294 -163z m-1656 -636 c30 -8 116 -43 190 -78 141 -65 202 -86 384 -129 127 -30 196 -58 228 -92 18 -19 35 -78 80 -282 112 -496 142 -743 103 -843 -50 -126 -165 -242 -399 -403 l-157 -108 -38 37 c-78 76 -100 157 -100 365 l0 137 83 11 c205 29 317 144 348 358 10 65 14 75 34 80 58 15 79 94 37 137 -42 42 -238 34 -368 -14 -60 -23 -152 -101 -191 -162 -65 -103 -101 -267 -110 -502 -10 -267 28 -397 156 -537 78 -84 99 -120 107 -182 18 -126 -87 -225 -246 -233 -99 -5 -117 7 -72 47 18 17 43 30 55 30 28 0 65 32 73 64 7 28 -18 81 -41 90 -33 12 -96 5 -140 -15 -50 -24 -100 -77 -136 -144 -13 -25 -26 -45 -29 -45 -3 0 -16 20 -29 45 -36 67 -86 120 -136 144 -44 20 -107 27 -140 15 -23 -9 -48 -62 -41 -90 8 -32 45 -64 73 -64 12 0 37 -13 55 -30 45 -40 27 -52 -72 -47 -159 8 -264 107 -246 233 8 62 29 98 107 182 128 140 166 270 156 537 -9 235 -45 399 -110 502 -39 61 -131 139 -191 162 -79 29 -175 44 -266 39 -66 -3 -83 -7 -102 -25 -42 -43 -21 -122 37 -137 20 -5 24 -15 34 -80 31 -214 143 -329 349 -358 l82 -11 0 -137 c0 -208 -22 -289 -100 -365 l-38 -37 -157 108 c-234 161 -349 277 -399 403 -38 98 -13 320 90 786 30 138 60 266 66 285 22 73 76 103 255 146 179 42 242 63 378 126 168 78 197 88 275 97 81 8 149 4 219 -16z m-730 -1011 c36 -29 94 -130 107 -186 l7 -29 -47 6 c-114 16 -178 87 -192 213 l-7 54 48 -15 c26 -7 64 -27 84 -43z m1287 -1 c-16 -123 -80 -192 -191 -208 -40 -5 -45 -3 -45 13 0 25 45 121 75 160 26 33 115 84 148 84 18 0 19 -5 13 -49z m-770 -1596 c47 -32 81 -32 129 1 37 25 38 25 99 10 34 -9 76 -16 94 -16 29 0 31 -3 37 -43 10 -66 3 -98 -27 -120 l-26 -20 -96 32 c-56 18 -117 31 -146 31 -29 0 -90 -13 -146 -31 l-96 -32 -26 20 c-30 22 -37 54 -27 120 6 42 7 43 43 44 20 0 57 6 82 13 64 19 65 19 106 -9z"/>
                 <path d="M3729 5180 c-9 -5 -22 -23 -29 -40 -15 -37 0 -81 33 -98 14 -7 101 -13 227 -14 245 -4 223 6 350 -160 47 -62 104 -127 127 -144 52 -40 117 -55 178 -42 67 14 119 60 215 186 127 166 105 156 350 160 126 1 213 7 227 14 12 6 27 24 34 40 16 38 -9 94 -44 103 -13 4 -125 5 -248 3 -222 -3 -224 -3 -269 -30 -55 -32 -114 -94 -195 -205 -33 -45 -72 -89 -87 -98 -26 -15 -30 -15 -55 0 -16 9 -55 53 -88 98 -81 111 -140 173 -195 205 -45 27 -46 27 -280 30 -141 1 -241 -2 -251 -8z"/>
                 </g>
                </svg>
-            </div>
-            <div className="md:flex md:items-center md:gap-12">
-              <div className="flex items-center gap-4">
-                <div className="sm:flex sm:gap-4">
-                  <a
-                    className="rounded-md bg-blue-500 px-5 py-2.5 text-sm font-medium text-white shadow"
-                    href="#"
-                  >
-                    <NavLink className='nav-link' to='/Register'>
-                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
-                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
-                    </svg>
-                    </NavLink> 
-                  </a>
+
+              </div>
+              {/* Botón de Configuración y Menú Desplegable */}
+              
+              <div className="relative flex items-center">
+                
+                {/* Botón de Configuración */}
+                <button onClick={toggleDropdown} className="flex items-center text-sm font-medium text-blue-600 focus:outline-none mr-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-wide-connected" viewBox="0 0 16 16">
+                  <path d="M7.068.727c.243-.97 1.62-.97 1.864 0l.071.286a.96.96 0 0 0 1.622.434l.205-.211c.695-.719 1.888-.03 1.613.931l-.08.284a.96.96 0 0 0 1.187 1.187l.283-.081c.96-.275 1.65.918.931 1.613l-.211.205a.96.96 0 0 0 .434 1.622l.286.071c.97.243.97 1.62 0 1.864l-.286.071a.96.96 0 0 0-.434 1.622l.211.205c.719.695.03 1.888-.931 1.613l-.284-.08a.96.96 0 0 0-1.187 1.187l.081.283c.275.96-.918 1.65-1.613.931l-.205-.211a.96.96 0 0 0-1.622.434l-.071.286c-.243.97-1.62.97-1.864 0l-.071-.286a.96.96 0 0 0-1.622-.434l-.205.211c-.695.719-1.888.03-1.613-.931l.08-.284a.96.96 0 0 0-1.186-1.187l-.284.081c-.96.275-1.65-.918-.931-1.613l.211-.205a.96.96 0 0 0-.434-1.622l-.286-.071c-.97-.243-.97-1.62 0-1.864l.286-.071a.96.96 0 0 0 .434-1.622l-.211-.205c-.719-.695-.03-1.888.931-1.613l.284.08a.96.96 0 0 0 1.187-1.186l-.081-.284c-.275-.96.918-1.65 1.613-.931l.205.211a.96.96 0 0 0 1.622-.434zM12.973 8.5H8.25l-2.834 3.779A4.998 4.998 0 0 0 12.973 8.5m0-1a4.998 4.998 0 0 0-7.557-3.779l2.834 3.78zM5.048 3.967l-.087.065zm-.431.355A4.98 4.98 0 0 0 3.002 8c0 1.455.622 2.765 1.615 3.678L7.375 8zm.344 7.646.087.065z"/>
+                </svg>
+                  Settings
+                </button>
+                {/* Menú Desplegable */}
+                {isDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-22 bg-white rounded-md shadow-md z-10">
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    <NavLink className='nav-link' to='/Profile'>Profile</NavLink></a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    <NavLink className='nav-link' to='/'>Settings</NavLink></a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    <NavLink className='nav-link' to='/'>Log-out</NavLink></a>
+                  </div>
+                )}
                   <div className="hidden sm:flex">
-                    <a
-                      className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-blue-600"
+                    <a className="rounded-md bg-blue-600 px-5 py-2.5 text-sm font-medium text-white"
                       href="#"
                     >
-                     <NavLink className='nav-link' to='/Register'>
-                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-                    </svg>
+                     <NavLink className='nav-link' to='/cart'>
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                      </svg>
                     </NavLink> 
                     </a>
                   </div>
-                  
-                </div>
-                <div className="block md:hidden">
-                  <button className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                  </button>
-                </div>
               </div>
             </div>
           </div>
-        </div>
-      </header>
-    <section>
-    <div className="app">
-      {products.map(product => (
-        <ShoeCard
-          key={product.id}
-          id={product.id}
-          name={product.name}
-          price={product.price}
-          image={product.image}
-        />
-      ))}
-    </div>
-    </section>
-
+        </header>
+        <section>
+          <div className="app">
+            {products.map(product => (
+              <ShoeCard
+                key={product.id}
+                id={product.id}
+                name={product.name}
+                price={product.price}
+                image={product.image}
+              />
+            ))}
+          </div>
+        </section>
       </div>
-      
-    )
+    </div>
+  );
 }
